@@ -13,9 +13,10 @@ public class ValidParentheses {
                 case '{': stack.push('}'); break;
                 case '[': stack.push(']'); break;
                 case ')': case '}': case ']':
-                    if(stack.isEmpty() || stack.pop()!=null){
+                    if(stack.isEmpty() || stack.pop()!=c){
                         return false;
                     }
+                    break;
                 default: return false;
             }
         }
@@ -23,7 +24,7 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args){
-        String s = "{}{}{}{]}";
+        String s = "{}{}{}{}";
 
         System.out.println(s);
         boolean result = isValid(s);
