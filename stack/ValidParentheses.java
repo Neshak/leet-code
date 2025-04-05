@@ -13,9 +13,10 @@ public class ValidParentheses {
                 case '{': stack.push('}'); break;
                 case '[': stack.push(']'); break;
                 case ')': case '}': case ']':
-                    if(stack.isEmpty() || stack.pop()!=null){
+                    if(stack.isEmpty() || stack.pop()!=c){
                         return false;
                     }
+                    break;
                 default: return false;
             }
         }
